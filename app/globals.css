@@ -128,3 +128,16 @@
     @apply font-sans;
   }
 }
+
+/* ── 테마별 폰트 오버라이드 ── */
+.theme-retro body {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.theme-cyberpunk body {
+  font-family: 'Courier New', 'Consolas', monospace;
+  letter-spacing: 0.03em;
+}
+.theme-minimal body {
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}

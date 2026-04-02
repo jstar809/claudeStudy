@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin } from "lucide-react";
 import MobileMenu from "./MobileMenu";
+import ThemeSwitcher from "@/components/theme/ThemeSwitcher";
 
 const navLinks = [
   { href: "/cities", label: "도시 탐색" },
@@ -40,6 +41,7 @@ export default function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+            <ThemeSwitcher />
             <div className="hidden md:flex items-center gap-2">
               <Button variant="ghost" size="sm" render={<Link href="/auth/login" />}>
                 로그인
