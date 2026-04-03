@@ -3,7 +3,22 @@
     "allow": [
       "Bash(npx create-next-app@latest . --typescript --tailwind --app --import-alias=\"@/*\" --eslint --no-git --yes --name=\"korea-nomad\")",
       "Read(//c/Users/이준선/OneDrive/바탕 화면/클로드코드 테스트/**)",
-      "Bash(npx create-next-app@latest korea-nomad --typescript --tailwind --app --import-alias=\"@/*\" --eslint --no-git --yes)"
+      "Bash(npx create-next-app@latest korea-nomad --typescript --tailwind --app --import-alias=\"@/*\" --eslint --no-git --yes)",
+      "Read(//c/Users/이준선/.claude/**)",
+      "Read(//c/Users/이준선/AppData/Roaming/Claude/**)",
+      "mcp__context7__query-docs",
+      "Bash(mkdir -p \"C:\\\\Users\\\\이준선\\\\OneDrive\\\\바탕 화면\\\\클로드코드 테스트\\\\nomadTest\\\\lib\\\\supabase\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\이준선\\\\OneDrive\\\\바탕 화면\\\\클로드코드 테스트\\\\nomadTest\\\\app\\\\auth\\\\confirm\")",
+      "Bash(pnpm add:*)",
+      "Bash(cmd /c \"taskkill /PID 14024 /F\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(pnpm dev:*)",
+      "mcp__playwright__browser_navigate",
+      "Bash(npx playwright:*)",
+      "Bash(python3 -c \"import sys,json; lines=[json.loads\\(l\\) for l in sys.stdin if l.strip\\(\\)]; [print\\(l['timestamp'],l['source'],l['level'],l['message'][:200]\\) for l in lines[-30:]]\")",
+      "Bash(curl:*)",
+      "Bash(powershell:*)",
+      "Bash(cmd:*)"
     ]
   }
 }
