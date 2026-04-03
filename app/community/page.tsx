@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "커뮤니티",
+  description: "같은 도시의 노마드와 연결되어 Q&A, 밋업, 체크인 정보를 나눠보세요.",
+  openGraph: {
+    title: "커뮤니티 | KoreaNomad",
+    description: "같은 도시의 노마드와 연결되어 Q&A, 밋업, 체크인 정보를 나눠보세요.",
+  },
+};
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

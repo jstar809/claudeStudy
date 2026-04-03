@@ -5,7 +5,7 @@ import { cities } from "@/lib/mock-data";
 import { ArrowRight } from "lucide-react";
 
 export default function FeaturedCities() {
-  const featured = cities.slice(0, 6);
+  const featured = [...cities].sort((a, b) => a.rank - b.rank).slice(0, 6);
 
   return (
     <section className="py-16">

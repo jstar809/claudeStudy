@@ -116,6 +116,28 @@ export default function CityCard({ city, view = "grid" }: CityCardProps) {
             <div className="text-white/70 text-xs">종합점수</div>
           </div>
         </div>
+
+        {/* Score preview overlay on hover */}
+        <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center p-4">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs text-white w-full">
+            {(
+              [
+                ["🏆", "노마드", city.scores.nomad],
+                ["💵", "비용", city.scores.cost],
+                ["📡", "인터넷", city.scores.internet],
+                ["☕", "카페", city.scores.cafe],
+                ["👮", "안전", city.scores.safety],
+                ["🌤", "기후", city.scores.climate],
+              ] as [string, string, number][]
+            ).map(([emoji, label, score]) => (
+              <div key={label} className="flex items-center gap-1.5">
+                <span>{emoji}</span>
+                <span className="text-white/70">{label}</span>
+                <span className="ml-auto font-bold">{score}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <CardContent className="p-4">

@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, MapPin } from "lucide-react";
+import { Menu, X, MapPin } from "lucide-react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/cities", label: "도시 탐색" },
@@ -15,12 +17,15 @@ const navLinks = [
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger render={<Button variant="ghost" size="icon" className="md:hidden" />}>
-        <Menu className="h-5 w-5" />
-        <span className="sr-only">메뉴 열기</span>
+        <span className={`transition-transform duration-200 ${open ? "rotate-90" : "rotate-0"}`}>
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </span>
+        <span className="sr-only">{open ? "메뉴 닫기" : "메뉴 열기"}</span>
       </SheetTrigger>
       <SheetContent side="right" className="w-72">
         <div className="flex flex-col gap-6 mt-6">
@@ -35,7 +40,12 @@ export default function MobileMenu() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="flex items-center py-3 px-3 rounded-md text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                className={cn(
+                  "flex items-center py-3 px-3 rounded-md text-sm font-medium transition-colors",
+                  pathname.startsWith(link.href)
+                    ? "bg-accent text-accent-foreground font-semibold"
+                    : "hover:bg-accent hover:text-accent-foreground"
+                )}
                 onClick={() => setOpen(false)}
               >
                 {link.label}

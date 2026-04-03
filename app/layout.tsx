@@ -12,8 +12,24 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "KoreaNomad — 대한민국 디지털 노마드 도시 탐색",
+  title: {
+    default: "KoreaNomad — 대한민국 디지털 노마드 도시 탐색",
+    template: "%s | KoreaNomad",
+  },
   description: "한국 내 디지털 노마드를 위한 도시 탐색 & 커뮤니티 평가 플랫폼",
+  metadataBase: new URL("https://koreanomad.kr"),
+  openGraph: {
+    title: "KoreaNomad — 대한민국 디지털 노마드 도시 탐색",
+    description: "실제 노마드가 평가한 12개+ 도시 데이터로 나에게 맞는 도시를 찾아보세요.",
+    siteName: "KoreaNomad",
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KoreaNomad — 대한민국 디지털 노마드 도시 탐색",
+    description: "실제 노마드가 평가한 12개+ 도시 데이터로 나에게 맞는 도시를 찾아보세요.",
+  },
 };
 
 export default function RootLayout({

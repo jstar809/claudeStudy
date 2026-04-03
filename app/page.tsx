@@ -1,6 +1,8 @@
 import HeroSection from "@/components/home/HeroSection";
 import StatsSection from "@/components/home/StatsSection";
 import FeaturedCities from "@/components/home/FeaturedCities";
+import CheckinRankSection from "@/components/home/CheckinRankSection";
+import RecentReviewsSection from "@/components/home/RecentReviewsSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -12,6 +14,8 @@ export default function HomePage() {
       <HeroSection />
       <StatsSection />
       <FeaturedCities />
+      <CheckinRankSection />
+      <RecentReviewsSection />
 
       {/* How it works */}
       <section className="py-16 bg-muted/20">

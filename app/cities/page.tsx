@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import CityGrid from "@/components/cities/CityGrid";
 import { cities } from "@/lib/mock-data";
+
+export const metadata: Metadata = {
+  title: "도시 탐색",
+  description: "대한민국 12개 도시의 노마드 생활 조건(생활비, 인터넷, 카페, 안전도)을 한눈에 비교하세요.",
+  openGraph: {
+    title: "도시 탐색 | KoreaNomad",
+    description: "대한민국 12개 도시의 노마드 생활 조건을 한눈에 비교하세요.",
+  },
+};
 
 export default function CitiesPage() {
   return (

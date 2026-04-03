@@ -108,14 +108,15 @@ export function useTheme() {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("default");
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window === "undefined") return "default";
+    const saved = localStorage.getItem("theme") as Theme | null;
+    return saved && saved in themeVars ? saved : "default";
+  });
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme") as Theme | null;
-    if (saved && saved in themeVars) {
-      setThemeState(saved);
-      applyTheme(saved);
-    }
+    applyTheme(theme);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setTheme = (t: Theme) => {
